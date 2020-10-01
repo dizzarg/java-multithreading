@@ -1,10 +1,17 @@
-package ru.dkadyrov.multithreading.locks;
+package ru.dkadyrov.multithreading.waitNotify;
 
 import java.util.PriorityQueue;
 import java.util.Queue;
 
 /**
- * Provider-Consumer Synchronize Problem with wait() and notifyAll()
+ * Provider-Consumer Synchronize Problem with wait() and notifyAll().
+ * A simple scenario using wait() and notify() in java.
+ *
+ * Firstly, you need to ensure that any calls to {@code wait() or notify()} are
+ * within a synchronized region of code (with the {@code wait() or notify()}
+ * calls being synchronized on the "same" object).
+ * The reason for this (other than the standard thread safety concerns) is
+ * due to something known as a missed signal.
 */
 public class ProviderConsumerSynchronizeProblemSolution<E> {
 
