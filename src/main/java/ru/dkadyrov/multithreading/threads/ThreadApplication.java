@@ -5,7 +5,6 @@ package ru.dkadyrov.multithreading.threads;
  *
  * Java support for OS-threads.
  * Thread is a basic unit that can run in parallel through CPU cores.
- * A thread can 'see' others threads memory.c
  */
 public class ThreadApplication {
 
@@ -18,6 +17,7 @@ public class ThreadApplication {
         Runner runner2 = new Runner();
         runner2.start();
 
+        // wait until thread on which join has called finished
         runner1.join();
         runner2.join();
 
@@ -29,6 +29,7 @@ public class ThreadApplication {
         thread1.start();
         thread2.start();
 
+        // wait until thread on which join has called finished
         thread1.join();
         thread2.join();
 
